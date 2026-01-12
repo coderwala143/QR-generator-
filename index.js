@@ -11,7 +11,7 @@ app.use(express.json());
  * POST /generate-qr-label
  * Body: { "text": "GI19-ADM-LB-FS.FE001" }
  */
-app.post("/generate-qr-label", async (req, res) => {
+app.get("/generate-qr-label", async (req, res) => {
   try {
     const { text } = req.query;
 
