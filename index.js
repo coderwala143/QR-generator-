@@ -1,12 +1,16 @@
 import express from "express";
 import QRCode from "qrcode";
-import { createCanvas, loadImage } from "canvas";
+import { createCanvas, loadImage, registerFont } from "canvas";
 
 const app = express();
 const PORT = process.env.PORT ||3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+registerFont("./fonts/DejaVuSans.ttf", {
+  family: "DejaVuSans"
+})
 
 /**
  * POST /generate-qr-label
