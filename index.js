@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 registerFont("./fonts/DejaVuSans.ttf", {
-  family: "DejaVuSans"
+  family: "DejaVu Sans"
 })
 
 /**
@@ -53,7 +53,7 @@ app.get("/generate-qr-label", async (req, res) => {
 
     // Small text below QR
     ctx.fillStyle = "#000";
-    ctx.font = "20px Arial";
+    ctx.font = "20px DejaVuSans";
     ctx.textAlign = "center";
     ctx.fillText(text, WIDTH / 2, QR_TOP + QR_SIZE + 40);
 
